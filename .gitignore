@@ -1,0 +1,6 @@
+# env
+.env
+Back/.env
+Front/.env
+**/.env
+.env.*
