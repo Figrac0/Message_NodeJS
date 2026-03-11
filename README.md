@@ -7,7 +7,7 @@ The backend is centered around Express as the main HTTP server and GraphQL as th
 <div align="center">
   <a href="https://message-node-front.onrender.com/" target="_blank">
     <img
-      src="https://raw.githubusercontent.com/Figrac0/Figrac0/c04e81f10d4e8545f035ba449c43f646922caa6b/href.svg
+      src="https://github.com/Figrac0/Figrac0/blob/main/href.svg"
       alt="Quick Access - Visit Site"
       width="100%"
     />
