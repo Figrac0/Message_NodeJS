@@ -7,6 +7,7 @@ import Toolbar from "./components/Toolbar/Toolbar";
 import MainNavigation from "./components/Navigation/MainNavigation/MainNavigation";
 import MobileNavigation from "./components/Navigation/MobileNavigation/MobileNavigation";
 import ErrorHandler from "./components/ErrorHandler/ErrorHandler";
+import HomePage from "./pages/Home/Home";
 import FeedPage from "./pages/Feed/Feed";
 import SinglePostPage from "./pages/Feed/SinglePost/SinglePost";
 import LoginPage from "./pages/Auth/Login";
@@ -216,6 +217,11 @@ class App extends Component {
                 <Switch>
                     <Route
                         path="/"
+                        exact
+                        render={() => <HomePage />}
+                    />
+                    <Route
+                        path="/feed"
                         exact
                         render={(props) => (
                             <FeedPage

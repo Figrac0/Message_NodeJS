@@ -8,7 +8,7 @@
     border: 1px solid rgba(255, 255, 255, 0.9);
     border-radius: 16px;
     cursor: pointer;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -202,6 +202,7 @@
 /* Адаптивность */
 @media (max-width: 768px) {
     .mobile-toggle {
+        display: flex;
         width: 42px;
         height: 42px;
         gap: 5px;

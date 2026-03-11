@@ -1,11 +1,30 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ReactDOM from "react-dom";
 
 import Button from "../Button/Button";
 import "./Modal.css";
 
-const modal = (props) =>
-    ReactDOM.createPortal(
+const Modal = (props) => {
+    useEffect(() => {
+        const originalOverflow = document.body.style.overflow;
+        const originalPaddingRight = document.body.style.paddingRight;
+
+        const scrollbarWidth =
+            window.innerWidth - document.documentElement.clientWidth;
+
+        document.body.style.overflow = "hidden";
+
+        if (scrollbarWidth > 0) {
+            document.body.style.paddingRight = `${scrollbarWidth}px`;
+        }
+
+        return () => {
+            document.body.style.overflow = originalOverflow;
+            document.body.style.paddingRight = originalPaddingRight;
+        };
+    }, []);
+
+    return ReactDOM.createPortal(
         <div className="modal">
             <header className="modal__header">
                 <h1>{props.title}</h1>
@@ -29,5 +48,6 @@ const modal = (props) =>
         </div>,
         document.getElementById("modal-root"),
     );
+};
 
-export default modal;
+export default Modal;

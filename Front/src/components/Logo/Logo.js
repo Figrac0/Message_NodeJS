@@ -5,7 +5,7 @@ const logo = (props) => (
     <div className="logo-container">
         <h1 className="logo">
             <span className="logo-text">Message</span>
-            <span className="logo-highlight">Node</span>
+            <span className="logo-highlight">Node.js</span>
         </h1>
         <div className="logo-glow"></div>
         <div className="logo-particles">
