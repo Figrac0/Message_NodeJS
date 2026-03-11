@@ -60,7 +60,6 @@ body::before {
     padding: 0 2rem;
     animation: fadeInUp 0.8s cubic-bezier(0.2, 0.9, 0.3, 1) forwards;
     position: relative;
-    z-index: 1;
 }
 
 @keyframes fadeInUp {

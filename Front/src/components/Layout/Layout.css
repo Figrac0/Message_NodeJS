@@ -3,16 +3,17 @@
     position: fixed;
     left: 0;
     top: 0;
+    z-index: 1000;
 }
 
 .content {
-    margin-top: 3.5rem;
+    margin-top: 70px;
     padding: 1rem;
 }
 
 @media (min-width: 768px) {
     .content {
-        margin-top: 3.5rem;
+        margin-top: 70px;
         padding: 1rem 2rem;
     }
 }
