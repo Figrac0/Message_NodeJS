@@ -9,7 +9,7 @@ The backend is centered around Express as the main HTTP server and GraphQL as th
     <img
       src="https://github.com/Figrac0/Figrac0/blob/main/href.svg"
       alt="Quick Access - Visit Site"
-      width="100%"
+      width="50%"
     />
   </a>
 </div>
