@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import Image from "../../../components/Image/Image";
 import "./SinglePost.css";
 
+const API_URL = "https://message-node-back.onrender.com";
+
 class SinglePost extends Component {
     state = {
         postId: "",
@@ -45,7 +47,9 @@ class SinglePost extends Component {
 
     getStoredPreferences = (postId) => {
         try {
-            const rawPreferences = localStorage.getItem(this.getStorageKey(postId));
+            const rawPreferences = localStorage.getItem(
+                this.getStorageKey(postId),
+            );
 
             if (!rawPreferences) {
                 return null;
@@ -68,24 +72,25 @@ class SinglePost extends Component {
     componentDidMount() {
         const postId = this.props.match.params.postId;
         const graphqlQuery = {
-            query: `query FetchSinglePost($postId: ID!) {
-          post(id: $postId) {
-            title
-            content
-            imageUrl
-            creator {
-              name
-            }
-            createdAt
-          }
-        }
-      `,
+            query: `
+                query FetchSinglePost($postId: ID!) {
+                    post(id: $postId) {
+                        title
+                        content
+                        imageUrl
+                        creator {
+                            name
+                        }
+                        createdAt
+                    }
+                }
+            `,
             variables: {
                 postId: postId,
             },
         };
 
-        fetch("http://localhost:8080/graphql", {
+        fetch(`${API_URL}/graphql`, {
             method: "POST",
             headers: {
                 Authorization: "Bearer " + this.props.token,
@@ -100,6 +105,7 @@ class SinglePost extends Component {
                 if (resData.errors) {
                     throw new Error("Fetching post failed!");
                 }
+
                 const storedPreferences = this.getStoredPreferences(postId);
                 const author = resData.data.post.creator.name;
                 const isLiked = storedPreferences
@@ -118,8 +124,7 @@ class SinglePost extends Component {
                     postId,
                     title: resData.data.post.title,
                     author,
-                    image:
-                        "http://localhost:8080/" + resData.data.post.imageUrl,
+                    image: `${API_URL}/${resData.data.post.imageUrl}`,
                     date: new Date(
                         resData.data.post.createdAt,
                     ).toLocaleDateString("en-US", {
@@ -212,7 +217,7 @@ class SinglePost extends Component {
                 </div>
 
                 <div className="single-post__nav">
-                    <Link to="/" className="back-btn">
+                    <Link to="/feed" className="back-btn">
                         <svg
                             width="20"
                             height="20"
