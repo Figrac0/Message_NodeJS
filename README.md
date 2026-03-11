@@ -5,13 +5,13 @@ This project is a full-stack application built with Express, GraphQL, MongoDB, a
 The backend is centered around Express as the main HTTP server and GraphQL as the primary API layer for authentication, posts, and user status management. The frontend is a React application that communicates with the backend through `fetch` requests to the `/graphql` endpoint and a separate REST endpoint for image upload.
 
 <div align="center">
-
-
-<a href="https://message-node-front.onrender.com/" target="_blank" style="text-decoration: none;">
-    🚀 Quick Access - Click Below to Visit
-  </div>
-</a>
-
+  <a href="https://message-node-front.onrender.com/" target="_blank">
+    <img
+      src="https://raw.githubusercontent.com/Figrac0/Message_NodeJS/MVP/git/href.svg"
+      alt="Quick Access - Visit Site"
+      width="100%"
+    />
+  </a>
 </div>
 
 ---
